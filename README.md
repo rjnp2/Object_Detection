@@ -17,7 +17,6 @@ Object Detection can be done via multiple ways:
 - Deep Learning Object Detection \
   Taking the pre-trained network and using it as a base network in a deep learning object detection framework (i.e., Faster R-CNN, SSD, YOLO).
 
-
 Object detection was studied even before the breakout popularity of CNNs in Computer Vision. While CNNs are capable of automatically extracting more complex and better features, taking a glance at the conventional methods can at worst be a small detour and at best an inspiration.
 
 Object detection before Deep Learning was a several step process, starting with edge detection and feature extraction using techniques like SIFT, HOG etc. These image were then compared with existing object templates, usually at multi scale levels, to detect and localize objects present in the image.
@@ -34,17 +33,17 @@ Object detection before Deep Learning was a several step process, starting with 
 
   1. First, we take an image as input:
 
-  ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/3.png)
+      ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/3.png)
 
   2. Then we divide the image into various regions:
 
-  ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/4.png)
+    ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/4.png)
 
   3. We will then consider each region as a separate image.
   4. Pass all these regions (images) to the CNN and classify them into various classes.
   5. Once we have divided each region into its corresponding class, we can combine all these regions to get the original image with the detected objects:
 
-  ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/5.png)
+      ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/5.png)
 
   The problem with using this approach is that the objects in the image can have different aspect ratios and spatial locations. For instance, in some cases the object might be covering most of the image, while in others the object might only be covering a small percentage of the image. The shapes of the objects might also be different (happens a lot in real-life use cases).
 
