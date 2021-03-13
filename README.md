@@ -24,31 +24,33 @@ Object detection before Deep Learning was a several step process, starting with 
 
 ## BY USING DEEP LEARNING
 
-1. Method: The traditional object detection pipeline 
+- Method: The traditional object detection pipeline 
+
   Let’s start with the simplest deep learning approach, and a widely used one, for detecting objects in images – Convolutional Neural Networks or CNNs.
+  
   We pass an image to the network, and it is then sent through various convolutions and pooling layers. Finally, we get the output in the form of the object’s class. For each input image, we get a corresponding class as an output. 
 
-Let’s look at how we can solve a general object detection problem using a CNN.
+  Let’s look at how we can solve a general object detection problem using a CNN.
 
-1. First, we take an image as input:
+  1. First, we take an image as input:
 
-![1](https://github.com/rjnp2/Object_Detection/blob/main/images/3.png)
+  ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/3.png)
 
-2. Then we divide the image into various regions:
+  2. Then we divide the image into various regions:
 
-![1](https://github.com/rjnp2/Object_Detection/blob/main/images/4.png)
+  ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/4.png)
 
-3. We will then consider each region as a separate image.
-4. Pass all these regions (images) to the CNN and classify them into various classes.
-5. Once we have divided each region into its corresponding class, we can combine all these regions to get the original image with the detected objects:
+  3. We will then consider each region as a separate image.
+  4. Pass all these regions (images) to the CNN and classify them into various classes.
+  5. Once we have divided each region into its corresponding class, we can combine all these regions to get the original image with the detected objects:
 
-![1](https://github.com/rjnp2/Object_Detection/blob/main/images/5.png)
+  ![1](https://github.com/rjnp2/Object_Detection/blob/main/images/5.png)
 
-The problem with using this approach is that the objects in the image can have different aspect ratios and spatial locations. For instance, in some cases the object might be covering most of the image, while in others the object might only be covering a small percentage of the image. The shapes of the objects might also be different (happens a lot in real-life use cases).
+  The problem with using this approach is that the objects in the image can have different aspect ratios and spatial locations. For instance, in some cases the object might be covering most of the image, while in others the object might only be covering a small percentage of the image. The shapes of the objects might also be different (happens a lot in real-life use cases).
 
-As a result of these factors, we would require a very large number of regions resulting in a huge amount of computational time. So to solve this problem and reduce the number of regions, we can use region-based CNN, which selects the regions using a proposal method.
+  As a result of these factors, we would require a very large number of regions resulting in a huge amount of computational time. So to solve this problem and reduce the number of regions, we can use region-based CNN, which selects the regions using a proposal method.
 
-2. Understanding Region-Based Convolutional Neural Network/ Base network of an object detection framewor
+- Understanding Region-Based Convolutional Neural Network/ Base network of an object detection framewor
   The second method to deep learning object detection allows you to treat your pre-trained classification network as a base network in a deep learning object detection framework (such as Faster R-CNN, SSD, or YOLO).
 
   The benefit here is that you can create a complete end-to-end deep learning-based object detector.
