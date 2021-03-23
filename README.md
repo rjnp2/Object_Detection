@@ -62,5 +62,13 @@ Object detection before Deep Learning was a several step process, starting with 
   
   Typically these networks are pre-trained to perform classification on a large image dataset, such as ImageNet, to learn a rich set of discerning, discriminating filters.
   1. [RCNN](https://github.com/rjnp2/Object_Detection/tree/main/1.%20RCNN)
-  2. [Fast RCNN](https://github.com/rjnp2/Object_Detection/tree/main/2.%20Fast_RCNN)
+  2. Fast RCNN \
+    Instead of running a CNN 2,000 times per image, we can run it just once per image and get all the regions of interest (regions containing some object). \
+    Ross Girshick, the author of RCNN, came up with this idea of running the CNN just once per image and then finding a way to share that computation across the 2,000 regions. In Fast RCNN, we feed the input image to the CNN, which in turn generates the convolutional feature maps. Using these maps, the regions of proposals are extracted. We then use a RoI pooling layer to reshape all the proposed regions into a fixed size, so that it can be fed into a fully connected network. \
+    Let’s break this down into steps to simplify the concept: \
+      1. As with the earlier two techniques, we take an image as an input.
+      2. This image is passed to a ConvNet which in turns generates the Regions of Interest.
+      3. A RoI pooling layer is applied on all of these regions to reshape them as per the input of the ConvNet. Then, each region is passed on to a fully connected network.
+      4. A softmax layer is used on top of the fully connected network to output classes. Along with the softmax layer, a linear regression layer is also used parallely to output bounding box coordinates for predicted classes.
+
   
